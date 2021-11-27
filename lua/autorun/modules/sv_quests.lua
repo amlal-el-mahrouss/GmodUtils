@@ -1,5 +1,5 @@
 
-hook.Add("PlayerDeath", "CDN Quest Listener", function(victim, inflictor, attacker)
+hook.Add("PlayerDeath", "Badass Quest Listener", function(victim, inflictor, attacker)
     if PowerRounds.CurrentPR then return end
     if attacker == victim then return end
 
@@ -13,11 +13,11 @@ hook.Add("PlayerDeath", "CDN Quest Listener", function(victim, inflictor, attack
     attacker:AddFrags(1);
 end)
 
-hook.Add("PlayerSpawn", "CDN Season I Badass", function(ply)
+hook.Add("PlayerSpawn", "Season I Badass", function(ply)
     ply:SetModel("models/joshers/badasses/Playermodels/barney_closed.mdl");
 end)
 
-hook.Add("PlayerSpawn", "CDN Season I Add Spawn", function(ply)
+hook.Add("PlayerSpawn", "Eeason I Spawns", function(ply)
     if game.GetMap() == "gm_scarface" then
         local spawns = {
             Vector(6235.225586, 673.747375, 312.031250),
@@ -32,6 +32,6 @@ hook.Add("PlayerSpawn", "CDN Season I Add Spawn", function(ply)
             Vector(-190.337585, 563.087219, -79.968750),
         }
     
-        ply:SetPos(table.Random(spawns));
+        ply:SetPos(spawns[1, math.random(1, #spawns)]);
     end
 end)

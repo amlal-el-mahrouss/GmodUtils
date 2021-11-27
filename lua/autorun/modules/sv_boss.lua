@@ -11,7 +11,7 @@ LibC.Pickups = LibC.Pickups or {
     end,
 }
 
-hook.Add("OnStartRound", "CDN Boss", function()
+hook.Add("OnStartRound", "Example Boss", function()
     if game.GetMap() != "gm_scarface" then return end
     if LibC.Pickups:Create() then LibC:Log("Created Boss"); end
 

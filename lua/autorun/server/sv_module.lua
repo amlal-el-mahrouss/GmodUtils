@@ -29,16 +29,16 @@ function LibC:Find(root, res)
     end
 end
 
-local function reloadModules()
+local function ldModules()
     LibC:Log("Reloading modules...");
     LibC:Find(LibC.RootDirectory);
     LibC:Find(LibC.SoundDirectory, true);
 end
 
-LibC:AddCommand("reloadModules", function()
-    reloadModules();
+LibC:AddCommand("Load Modules From Disk", function()
+    ldModules();
 end, {["fondateur"] = { true }});
 
-hook.Add("Initialize", "LSR::ModuleLD", function()
-    reloadModules();
+hook.Add("Initialize", "Module load init", function()
+    ldModules();
 end)
