@@ -1,8 +1,8 @@
 # Ces fichiers contient le code-source de l'addon "LibC" et ainsi que ses modules
 
     Voici les fonctionalités de l'addon:
-        - Un Framework developpeur pour permettre un developpement plus rapide d'addons (ici modules)
-        - un système de modules (serveur; partagé (client-serveur))
+        - Un Framework pour permettre un developpement plus rapide d'addons (ici modules)
+        - Un système de modules (serveur; partagé (client-serveur))
             - avec ça un système de ressources (il est cependant conseillé de mettre en ligne votre contenu sur le workshop)
         - Un Système de chargement de configurations
             - Ils doivent se situer dans le dossier data GMod
