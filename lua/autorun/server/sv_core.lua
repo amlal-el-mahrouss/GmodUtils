@@ -33,20 +33,20 @@ end
 
 -- ctor
 function LibC.Promise:Init(Func)
-    if !isfunction(Func) then return nil else
-        local proto = setmetatable({}, LibC.Promise);
-        proto.__index = LibC.Promise;
+    if !isfunction(Func) then return nil end
     
-        proto.Func = Func;
-        proto.Done = { Failed = false, Reason = "" };
-    
-        proto.Do = LibC.Promise.Do;
-        proto.Then = LibC.Promise.Then;
-        proto.Catch = LibC.Promise.Catch;
-        proto.Throw = LibC.Promise.Throw;
-    
-        return proto
-    end
+    local proto = setmetatable({}, LibC.Promise);
+    proto.__index = LibC.Promise;
+
+    proto.Func = Func;
+    proto.Done = { Failed = false, Reason = "" };
+
+    proto.Do = LibC.Promise.Do;
+    proto.Then = LibC.Promise.Then;
+    proto.Catch = LibC.Promise.Catch;
+    proto.Throw = LibC.Promise.Throw;
+
+    return proto
 end
 
 function LibC.Promise:Do(...)
@@ -57,6 +57,6 @@ function LibC.Promise:Do(...)
         self.Done.Reason = "self.Func is not a function!";
         self:Catch();
     end
-    
+
     return self;
 end

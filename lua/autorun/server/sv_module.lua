@@ -18,20 +18,21 @@ function LibC:Find(root, res)
     for _, file in ipairs(files) do
         if !res then
             local prefix = string.lower( string.Left( file, 3 ) )
-            if prefix == "sh_" || prefix == "cl_" then AddCSLuaFile( LibC.RootDirectory .. file ) LibC:Log( "[AUTOLOAD] ADDCS: " .. file ) end
-            if prefix == "cl_" then LibC:Log( "[AUTOLOAD] SKIPPING CLIENTSIDE...") continue end
+            if prefix == "sh_" || prefix == "cl_" then AddCSLuaFile( LibC.RootDirectory .. file ) LibC:Log(Color(235, 113, 0), "[AUTOLOAD] ADDCS: " .. file) end
+            if prefix == "cl_" then LibC:Log(Color(235, 113, 0), "[AUTOLOAD] SKIPPING CLIENTSIDE...") continue end
     
             include( LibC.RootDirectory .. file );
-            LibC:Log("[AUTOLOAD] INCLUDE: " .. file); 
+            LibC:Log(Color(235, 113, 0), "[AUTOLOAD] INCLUDE: " .. file);
         else
             resource.AddSingleFile( "addons/LibC/" .. LibC.SoundDirectory .. file);
-            LibC:Log("[AUTOLOAD] ADD RES: " .. file);
+            LibC:Log(Color(235, 113, 0), "[AUTOLOAD] ADD RES: " .. file);
         end
     end
 end
 
 local function ldModules()
     LibC:Log("Reloading modules...");
+
     LibC:Find(LibC.RootDirectory);
     LibC:Find(LibC.SoundDirectory, true);
     LibC:Find(LibC.ContentDirectory, true);
