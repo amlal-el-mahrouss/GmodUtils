@@ -1,7 +1,7 @@
 
 --[[
-    LibC - LibClassic - The standard ClassiC Library
-	Copyright Amlal El Mahrouss & ClassiC all rights reserved
+    LibC
+	Copyright Amlal El Mahrouss All rights reserved
 
     Core functionalities.
 ]]
@@ -59,9 +59,4 @@ function LibC.Promise:Do(...)
     end
     
     return self;
-end
-
-function LibC:Log(...)
-    MsgC(...);
-    print();
 end

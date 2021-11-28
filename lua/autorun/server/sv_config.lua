@@ -1,9 +1,9 @@
 
 --[[
-    LibC - LibClassic - The standard ClassiC Library
-	Copyright Amlal El Mahrouss & ClassiC all rights reserved
+    LibC
+	Copyright Amlal El Mahrouss All rights reserved
 
-    Configs core
+    Core functionalities.
 ]]
 
 LibC = LibC or {}

@@ -10,6 +10,7 @@ LibC = LibC or {}
 
 LibC.RootDirectory = "autorun/modules/";
 LibC.SoundDirectory = "sound/";
+LibC.ContentDirectory = "content/";
 
 function LibC:Find(root, res)
     local files, dir = file.Find( root .. "*", "LUA" )
@@ -23,7 +24,7 @@ function LibC:Find(root, res)
             include( LibC.RootDirectory .. file );
             LibC:Log("[AUTOLOAD] INCLUDE: " .. file); 
         else
-            resource.AddSingleFile( LibC.SoundDirectory .. file);
+            resource.AddSingleFile( "addons/LibC/" .. LibC.SoundDirectory .. file);
             LibC:Log("[AUTOLOAD] ADD RES: " .. file);
         end
     end
@@ -33,9 +34,10 @@ local function ldModules()
     LibC:Log("Reloading modules...");
     LibC:Find(LibC.RootDirectory);
     LibC:Find(LibC.SoundDirectory, true);
+    LibC:Find(LibC.ContentDirectory, true);
 end
 
-LibC:AddCommand("Load Modules From Disk", function()
+LibC:AddCommand("ld", function()
     ldModules();
 end, {["fondateur"] = { true }});
 

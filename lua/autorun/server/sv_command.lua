@@ -1,7 +1,9 @@
 
 --[[
-    LibC - LibClassic - The standard ClassiC Library
-	Copyright Amlal El Mahrouss & ClassiC all rights reserved
+    LibC
+	Copyright Amlal El Mahrouss All rights reserved
+
+    Core functionalities.
 ]]
 
 LibC = LibC or {}
@@ -14,7 +16,7 @@ function LibC:AddCommand(Name, Func, perms)
             if target:IsPlayer() && perms[target:GetUserGroup()] then Func(target, cmd, args, argStr); end
         end);
 
-        LibC:Log(Color(0, 255, 0), "Added ", Name, " to commands list!");
+        LibC:Log(Color(0, 122, 0), "Added ", Name, " to commands list!");
         return true;
     end, Name):Catch();
 end
